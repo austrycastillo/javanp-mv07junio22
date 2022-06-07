@@ -1,0 +1,49 @@
+	System.out.println("Holaaaaaa X");
+		//COMENTARIO DE UNA LÍNEA
+		/*
+		 COMENTARIOS
+		 DE VARIAS
+		 LÍNEAS
+		 
+		 VARIABLES:
+		 TIPO_DE_DATO IDENTIFICADOR;  ---> DECLARAR VARIABLE
+		 IDENTIFICADOR = VALOR;       ---> INICIALIZAR UNA VARIABLE
+		 PODEMOS DECLARAR E INICIALIZAR AL MISMO TIEMPO
+		 */
+		byte edad;//una sola vez
+		edad = 16;
+		System.out.println(edad);
+		edad = 40;
+		System.out.println(edad);
+		//declarar e inicializar
+		int x = 12345;
+		System.out.println(x);
+		//boolean
+		boolean resultado = true;
+		System.out.println(resultado);
+		//decimales
+		double a = 25.8;
+		System.out.println(a);
+		float b = 54.86f;
+		System.out.println(b);
+		//concater
+		System.out.println("La variable b tiene el valor: " + b);
+		//char
+		char c = 'A';
+		System.out.println(c);
+		c= 64;
+		System.out.println(c);
+		//datos de tipo caracter--> clase String-
+		String nombre = "Austry";
+		System.out.println("Mi nombre es " + nombre);
+		//constantes: no pueden cambiar de valor
+		final int DATO = 10;
+		System.out.println(DATO);
+		//DATO = 12;//no se puede hacer
+		//OPERADORES: 
+		/*aritméticos: + - * / % 
+		 comparación < > <= >= == !=
+		 asignación += -= *= /= %=
+		 incremento ++ --
+		 lógicos && || !
+		 */
