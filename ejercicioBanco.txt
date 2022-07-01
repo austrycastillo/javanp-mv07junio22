@@ -1,0 +1,82 @@
+	/*
+		 * DESARROLLAR UN SISTEMA DE CAJERO AUTOMÁTICO PARA EL BANCO TUNTIN 1) VERIFICAR
+		 * LA CLAVE 3) RESTRINGIR CANTIDAD DE OPORTUNIDADES 4) MOSTRAR MENÚ DE OPCIONES:
+		 * 1 CONSULTA 2 DEPÓSITO 3 RETIRO.... 5) DESARROLLAR CADA OPCIÓN DEL MENÚ
+		 */
+		int claveUser, claveOk = 123, intentos = 3, i;
+		double saldo = 500, monto;
+		boolean flag = false;
+		/*
+		 * int seleccion = JOptionPane.showOptionDialog(null, "Seleccione opcion",
+		 * "Selector de opciones", JOptionPane.YES_NO_CANCEL_OPTION,
+		 * JOptionPane.QUESTION_MESSAGE, null, new Object[] { "consulta", "depósito",
+		 * "retiro" }, "menú de opcines");
+		 */
+		// o consulta 1 depósito 2 retiro
+		do {
+			System.out.println("Escribe tu clave");
+			claveUser = teclado.nextInt();
+			if (claveUser == claveOk) {
+				do {
+					int seleccion = JOptionPane.showOptionDialog(null, "Seleccione opcion", "Selector de opciones",
+							JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+							new Object[] { "consulta", "depósito", "retiro", "salir del sistema" }, "menú de opcines");
+					switch (seleccion) {
+					case 0:
+						System.out.println("Tu saldo es " + saldo);
+						System.out.println("Marque 1 si desea realizar otra operación o cualquier tecla para salir");
+						i = teclado.nextInt();
+						if (i == 1)
+							flag = true;
+						else {
+							flag = false;
+							intentos = 0;
+						}
+						break;
+					case 1:
+						System.out.println("monto a depositar");
+						monto = teclado.nextDouble();
+						saldo += monto;
+						System.out.println("Depósito realizado correctamente, tu saldo es " + saldo);
+						System.out.println("Marque 1 si desea realizar otra operación o cualquier tecla para salir");
+						i = teclado.nextInt();
+						if (i == 1)
+							flag = true;	
+						else {
+							flag = false;
+							intentos = 0;
+						}
+						break;
+						
+					case 2:
+						System.out.println("monto a retirar");
+						monto = teclado.nextDouble();
+						if (monto > saldo)
+							System.out.println("saldo insuficiente!");
+						else {
+							saldo -= monto;
+							System.out.println("Retiro realizado correctamente, su saldo es " + saldo);
+						}
+						System.out.println("Marque 1 si desea realizar otra operación o cualquier tecla para salir");
+						i = teclado.nextInt();
+						if (i == 1)
+							flag = true;
+						else {
+							flag = false;
+							intentos = 0;
+						}
+						break;
+					default:
+						System.out.println("vuelve pronto, chaitooooooo");
+						flag = false;
+						intentos = 0;
+					}
+				} while (flag);
+			} else {
+				System.out.println("Clave incorrecta");
+				intentos--;
+				System.out.println("te quedan " + intentos + " intentos");
+			}
+
+		} while (intentos > 0);
+		System.out.println("***fin del sistema***");
